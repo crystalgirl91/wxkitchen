@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
     <router-view />
   </div>
 </template>
@@ -11,6 +11,7 @@
 }
 #app .van-nav-bar__title{
 	color: #333;
+	font-size: 18px;
 }
 #app .van-icon{
 	color: #fc7e21;
@@ -28,7 +29,16 @@
 	height: 80%;
 	top: 10%;
 	right: 0px;
-	border-right: 1px solid #ebedf0;
+	border-right: 1px solid #cccccc;
 	transform: scale(0.5,1);
+}
+#app .van-nav-bar:after{
+		border-bottom: 0px;
+	}
+.app [class*='van-hairline']::after{
+	border-color: #cccccc;
+}
+.text-right{
+	text-align: right;
 }
 </style>

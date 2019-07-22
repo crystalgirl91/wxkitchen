@@ -65,7 +65,9 @@
 	}
 </script>
 <style>
-
+	.page-manage{
+		color: #666666;
+	}
 	.page-manage .van-button--warning{
 		background-color: #fc7e21;
 		width: 100%;

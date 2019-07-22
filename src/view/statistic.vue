@@ -1,8 +1,21 @@
 <template>
 	<div class="page-statistic">
 		<van-nav-bar title="统计"/>
-		<div class="top-row">
-			<van-row  gutter="10" type="flex" align="center" justify="space-around">
+		<div class="top-row van-hairline--top">
+			<van-row  type="flex"  align="center" justify="space-between">
+				<van-col>
+					<van-row gutter="16" type="flex" align="center" justify="flex-start">
+						<van-col v-if="type==1"> <van-button round v-on:click="changeType(1)" type="warning" size="small">厨师</van-button> </van-col>
+						<van-col v-if="type==1"> <van-button round v-on:click="changeType(2)" type="default" size="small">配菜</van-button> </van-col>
+						<van-col v-if="type==2"> <van-button round v-on:click="changeType(1)" type="default" size="small">厨师</van-button> </van-col>
+						<van-col v-if="type==2"> <van-button round v-on:click="changeType(2)" type="warning" size="small">配菜</van-button> </van-col>
+					</van-row>
+				</van-col>
+				<van-col>
+					<router-link class="gotoBtn" to="/manage">管理<van-icon name="arrow" /></router-link>
+				</van-col>
+			</van-row>
+			<!-- <van-row  gutter="10" type="flex" align="center" justify="space-around">
 				<van-col span="7" v-if="type==1"> <van-button round v-on:click="changeType(1)" type="warning" size="small">厨师</van-button> </van-col>
 				<van-col span="7" v-if="type==1"> <van-button round v-on:click="changeType(2)" type="default" size="small">配菜</van-button> </van-col>
 				<van-col span="7" v-if="type==2"> <van-button round v-on:click="changeType(1)" type="default" size="small">厨师</van-button> </van-col>
@@ -11,10 +24,10 @@
 				<van-col span="6" class="more-btn">
 					<router-link class="gotoBtn" to="/manage">管理<van-icon name="arrow" /></router-link>
 				</van-col>
-			</van-row>
+			</van-row> -->
 		</div>
 		<div class="page-maincont">
-			<van-sidebar v-model="activeKey">
+			<van-sidebar v-model="activeKey" class="page-sidebar">
 				  <van-sidebar-item title="刘毅" />
 				  <van-sidebar-item title="刘毅" />
 				  <van-sidebar-item title="刘毅" />
@@ -91,12 +104,14 @@
 	.page-maincont .side-cont{
 		flex: 1;
 		margin-left: -1px;
+		font-size: 14px;
+		color: #333333;
 	}
 	.top-row{
 		background: #f8f8f8;
-    	padding: 8px 16px;
-    	box-sizing: border-box;
-    	margin-right: 0px;
+		padding: 10px 16px;
+		box-sizing: border-box;
+		margin-right: 0px;
 	}
 	.more-btn{
 		text-align: right;
@@ -145,7 +160,11 @@
 	.page-statistic .van-hairline--top-bottom::after{
 		border-width: 0px;
 	}
-	.page-statistic .van-nav-bar:after{
+	/*.page-statistic .van-nav-bar:after{
 		border-width: 1px;
+	}*/
+	.page-sidebar{
+		min-height: 530px;
+		background-color: #f7f7f7;
 	}
 </style>

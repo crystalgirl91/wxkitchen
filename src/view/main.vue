@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="page-main">
 		<router-view />
 		<van-tabbar route active-color="#fc7e21" inactive-color="#999999">
 	      <van-tabbar-item
@@ -47,3 +47,24 @@
 	  }
 	}
 </script>
+<style>
+	.page-main .van-tabbar-item{
+		font-size: 14px;
+		position: relative;
+	}
+	.page-main .van-tabbar-item:not(:last-child):after{
+		content: "";
+		border-right: 1px solid #ccc;
+		height: 80%;
+		position: absolute;
+		top: 10%;
+		right: 0px;
+		transform: scaleX(0.5);
+	}
+	.page-main .van-tabbar-item__icon img{
+		height: 24px;
+	}
+	.page-main .van-tabbar{
+		height: 58px;
+	}
+</style>
